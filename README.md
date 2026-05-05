@@ -20,14 +20,22 @@ The workflow uses one scalar metric, `channel_separation_score`, plus hard valid
 - `logs/`: iteration idea, review, and feedback notes.
 - `output/`: metric, gates, mechanism artifacts, and evaluation summary.
 - `reports/execution_summary.md`: PS9-ready execution summary.
-- `scripts/controller.py`: minimal controller illustrating setup, baseline, iterate, summarize, and doctor commands.
+- `scripts/controller.py`: public controller with setup, baseline, iterate, run-once, summarize, and doctor commands.
 
 ## Run Order
 
 ```powershell
 python scripts/controller.py doctor --project .
+python scripts/controller.py setup --project .
+python scripts/controller.py baseline --project .
 python scripts/controller.py summarize --project .
 python code/empirical_autoresearch/evaluate.py
+```
+
+To run one new bounded iteration in the public scaffold:
+
+```powershell
+python scripts/controller.py iterate --project . --idea "add one predeclared channel test"
 ```
 
 The Stata files document the empirical workflow. A full Stata run requires a local Stata installation and a project-specific dataset. The public repository includes sanitized artifacts so the PS9 workflow is inspectable without confidential data.
