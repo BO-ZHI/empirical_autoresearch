@@ -1,0 +1,49 @@
+{
+  "metric_name": "channel_separation_score",
+  "metric_value": 0.9,
+  "metric_direction": "max",
+  "gate_status": "pass",
+  "classification": "reporting_management",
+  "gates": [
+    {
+      "gate": "reproducibility",
+      "status": "pass",
+      "severity": "hard",
+      "evidence_path": "logs/baseline_001/review.md",
+      "note": "baseline artifacts are present and readable"
+    },
+    {
+      "gate": "data_audit",
+      "status": "pass",
+      "severity": "hard",
+      "evidence_path": "data/manifest.md",
+      "note": "public repository uses a sanitized manifest"
+    },
+    {
+      "gate": "design_validity",
+      "status": "pass",
+      "severity": "hard",
+      "evidence_path": "program.md",
+      "note": "design, metric, and treatment-timing restrictions are fixed"
+    },
+    {
+      "gate": "inference",
+      "status": "pass",
+      "severity": "hard",
+      "evidence_path": "program.md",
+      "note": "inference gate requires fixed effects and clustering to be documented"
+    },
+    {
+      "gate": "outputs_present",
+      "status": "pass",
+      "severity": "hard",
+      "evidence_path": "output/evaluation_summary.json",
+      "note": "metric, gates, channel artifacts, logs, and summary are present"
+    }
+  ],
+  "recommended_next_iterations": [
+    "Add direct count-management channel tables.",
+    "Add expanded real-adjustment proxy families.",
+    "Add adjacent-period timing and category-offset tests."
+  ]
+}

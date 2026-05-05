@@ -1,0 +1,2 @@
+metric_name	metric_value	metric_direction	description
+channel_separation_score	0.9	max	fixed channel-separation score for the public sanitized example
