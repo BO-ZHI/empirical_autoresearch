@@ -66,4 +66,4 @@ The most recent full public fixture rerun executes `prepare.do`, `analyze.do`, a
 
 ## AI Use Disclosure
 
-This repository was prepared with an OpenAI coding agent. The agent was prompted to design an empirical autoresearch workflow, implement a controller and evaluation harness, run a sanitized forward test, and prepare PS9 documentation.
+This repository was prepared with an OpenAI coding agent: Codex. The agent was prompted to design an empirical autoresearch workflow, implement a controller and evaluation harness, run a sanitized forward test, and prepare PS9 documentation.
