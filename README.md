@@ -16,21 +16,32 @@ The workflow uses one scalar metric, `channel_separation_score`, plus hard valid
 - `code/empirical_autoresearch/prepare.do`: read-only setup harness.
 - `code/empirical_autoresearch/evaluate.py`: read-only evaluation harness.
 - `data/manifest.md`: public sanitized data manifest.
+- `data/synthetic_threshold_response.csv`: synthetic public fixture for reproducible software checks.
 - `results.tsv`: experiment history.
 - `logs/`: iteration idea, review, and feedback notes.
 - `output/`: metric, gates, mechanism artifacts, and evaluation summary.
 - `reports/execution_summary.md`: PS9-ready execution summary.
-- `scripts/controller.py`: minimal controller illustrating setup, baseline, iterate, summarize, and doctor commands.
+- `scripts/controller.py`: public controller with setup, baseline, iterate, run-once, summarize, and doctor commands.
 
 ## Run Order
 
 ```powershell
 python scripts/controller.py doctor --project .
+python scripts/controller.py setup --project .
+python scripts/controller.py baseline --project .
+python scripts/controller.py run-once --project . --idea "public fixture clean rerun"
 python scripts/controller.py summarize --project .
-python code/empirical_autoresearch/evaluate.py
 ```
 
-The Stata files document the empirical workflow. A full Stata run requires a local Stata installation and a project-specific dataset. The public repository includes sanitized artifacts so the PS9 workflow is inspectable without confidential data.
+To run one new bounded iteration in the public scaffold:
+
+```powershell
+set STATA_CLI=C:\Path\To\StataMP-64.exe
+# edit only code/empirical_autoresearch/analyze.do
+python scripts/controller.py iterate --project . --idea "add one predeclared channel test"
+```
+
+The controller executes `prepare.do`, `analyze.do`, and `evaluate.py` in sequence. Stata phases require a local Stata executable through `STATA_CLI` or the system path. The public synthetic fixture makes the workflow inspectable without confidential data.
 
 ## Autoresearch Rules
 
@@ -44,12 +55,14 @@ The Stata files document the empirical workflow. A full Stata run requires a loc
 
 ## Current Result
 
-The baseline channel-separation evaluator is the current kept state:
+The best kept historical state is `iterate_002`:
 
-- Metric: `channel_separation_score = 0.90`.
+- Metric: `channel_separation_score = 0.94`.
 - Gate status: `pass`.
 - Decision: `keep`.
-- Interpretation: current sanitized evidence supports a threshold-response pattern consistent with reporting management or category movement, while direct real-adjustment evidence remains incomplete.
+- Interpretation: the kept state improves channel separation while keeping gates valid.
+
+The most recent full public fixture rerun executes `prepare.do`, `analyze.do`, and `evaluate.py` on synthetic data. It passes gates with `channel_separation_score = 0.75` and is discarded because it does not beat the historical incumbent.
 
 ## AI Use Disclosure
 

@@ -1,3 +1,2 @@
-channel	proxy_family	support	interpretation
-real_adjustment	economic_outcome_proxies	incomplete	current public artifacts do not establish a clean real-adjustment claim
-real_adjustment	balance_sheet_proxies	incomplete	stronger structured coefficient parsing is a next improvement
+channel	proxy_family	coefficient	support	interpretation
+real_adjustment	real_activity_proxy	-2.0	mixed	real-activity proxy moves less than reporting-channel proxies

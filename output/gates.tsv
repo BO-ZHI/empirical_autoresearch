@@ -1,6 +1,6 @@
 gate	status	severity	evidence_path	note
-reproducibility	pass	hard	logs/baseline_001/review.md	baseline artifacts are present and readable
-data_audit	pass	hard	data/manifest.md	public repository uses a sanitized manifest
-design_validity	pass	hard	program.md	design, metric, and treatment-timing restrictions are fixed
-inference	pass	hard	program.md	inference gate requires fixed effects and clustering to be documented
-outputs_present	pass	hard	output/evaluation_summary.json	metric, gates, channel artifacts, logs, and summary are present
+reproducibility	pass	hard	output/prepare_status.tsv; output/run_manifest.tsv	prep and driver manifests exist
+data_audit	pass	hard	data/synthetic_threshold_response.csv	synthetic fixture has required fields and all design cells
+design_validity	pass	hard	output/channel_stats.tsv	all treatment-period cells are present
+inference	pass	hard	output/regression_summary.tsv	driver exported coefficient, standard-error, and sample-size rows
+outputs_present	pass	hard	output/	required public fixture artifacts are present

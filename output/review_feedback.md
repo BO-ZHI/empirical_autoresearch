@@ -1,8 +1,8 @@
 # Review Feedback
 
 - Classification: reporting_management.
-- Metric: 0.90.
+- Metric: 0.75.
 - Gate status: pass.
-- Next idea 1: add direct count-management channel tables.
-- Next idea 2: add expanded real-adjustment proxy families.
-- Next idea 3: add adjacent-period timing and category-offset tests.
+- Next idea 1: replace the fixture with authorized project data after data-lock review.
+- Next idea 2: expand the coefficient parser to direct count, timing, and category-substitution tables.
+- Next idea 3: require a clean Stata rerun before any claim-ready empirical statement.

@@ -1,0 +1,5 @@
+item	status	note
+analysis_driver	present	single editable file
+metric_contract	present	channel_separation_score is fixed
+data_manifest	present	public sanitized manifest plus synthetic fixture
+mechanism_outputs	present	channel_stats.tsv and regression_summary.tsv created

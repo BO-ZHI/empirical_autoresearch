@@ -1,0 +1,5 @@
+channel	dependent_variable	coefficient	standard_error	n	interpretation
+reported_number_management	reported_count	  -4.7500	   0.2588	16	negative interaction supports fewer reported records
+reported_number_management	below_threshold_mass	   0.2175	   0.0157	16	positive interaction supports threshold bunching
+real_adjustment	real_activity_proxy	  -2.0000	   0.7008	16	small interaction weakens real-adjustment interpretation
+category_substitution	category_shift	   0.1350	   0.0090	16	positive interaction supports category movement

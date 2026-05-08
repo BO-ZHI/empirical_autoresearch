@@ -1,0 +1,5 @@
+treat	post	reported_count	below_threshold_mass	avg_amount_per_record	real_activity_proxy	category_shift
+0	0	9	.079999998	77.5	95.75	.045000002
+0	1	9	.1075	80.5	97	.064999998
+1	0	11.5	.105	81.25	99.5	.050000001
+1	1	6.75	.35000002	115.25	98.75	.205

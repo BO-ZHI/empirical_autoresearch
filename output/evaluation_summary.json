@@ -1,49 +1,55 @@
 {
   "metric_name": "channel_separation_score",
-  "metric_value": 0.9,
+  "metric_value": 0.75,
   "metric_direction": "max",
   "gate_status": "pass",
   "classification": "reporting_management",
+  "coefficients": {
+    "reported_count": -4.75,
+    "below_threshold_mass": 0.2175,
+    "real_activity_proxy": -2.0,
+    "category_shift": 0.135
+  },
   "gates": [
     {
       "gate": "reproducibility",
       "status": "pass",
       "severity": "hard",
-      "evidence_path": "logs/baseline_001/review.md",
-      "note": "baseline artifacts are present and readable"
+      "evidence_path": "output/prepare_status.tsv; output/run_manifest.tsv",
+      "note": "prep and driver manifests exist"
     },
     {
       "gate": "data_audit",
       "status": "pass",
       "severity": "hard",
-      "evidence_path": "data/manifest.md",
-      "note": "public repository uses a sanitized manifest"
+      "evidence_path": "data/synthetic_threshold_response.csv",
+      "note": "synthetic fixture has required fields and all design cells"
     },
     {
       "gate": "design_validity",
       "status": "pass",
       "severity": "hard",
-      "evidence_path": "program.md",
-      "note": "design, metric, and treatment-timing restrictions are fixed"
+      "evidence_path": "output/channel_stats.tsv",
+      "note": "all treatment-period cells are present"
     },
     {
       "gate": "inference",
       "status": "pass",
       "severity": "hard",
-      "evidence_path": "program.md",
-      "note": "inference gate requires fixed effects and clustering to be documented"
+      "evidence_path": "output/regression_summary.tsv",
+      "note": "driver exported coefficient, standard-error, and sample-size rows"
     },
     {
       "gate": "outputs_present",
       "status": "pass",
       "severity": "hard",
-      "evidence_path": "output/evaluation_summary.json",
-      "note": "metric, gates, channel artifacts, logs, and summary are present"
+      "evidence_path": "output/",
+      "note": "required public fixture artifacts are present"
     }
   ],
   "recommended_next_iterations": [
-    "Add direct count-management channel tables.",
-    "Add expanded real-adjustment proxy families.",
-    "Add adjacent-period timing and category-offset tests."
+    "Run the same harness on authorized project data.",
+    "Add structured coefficient parsing for timing and category-offset tests.",
+    "Use clean Stata reruns before claim-ready review."
   ]
 }

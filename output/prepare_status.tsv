@@ -1,0 +1,4 @@
+item	status	note
+data_file	pass	data/synthetic_threshold_response.csv
+row_count	pass	16
+treatment_cells	pass	treat=0 1; post=0 1
