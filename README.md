@@ -1,6 +1,6 @@
 # Empirical Autoresearch Workflow
 
-This repository contains a public, sanitized example of an autoresearch-style empirical workflow for PS9. It adapts the core design from Andrej Karpathy's `autoresearch` project to an empirical threshold-response setting.
+This repository contains a public, sanitized example of an autoresearch-style empirical workflow. It adapts the core design from Andrej Karpathy's `autoresearch` project to an empirical threshold-response setting.
 
 ## Project
 
@@ -20,7 +20,7 @@ The workflow uses one scalar metric, `channel_separation_score`, plus hard valid
 - `results.tsv`: experiment history.
 - `logs/`: iteration idea, review, and feedback notes.
 - `output/`: metric, gates, mechanism artifacts, and evaluation summary.
-- `reports/execution_summary.md`: PS9-ready execution summary.
+- `reports/execution_summary.md`: execution summary.
 - `scripts/controller.py`: public controller with setup, baseline, iterate, run-once, summarize, and doctor commands.
 
 ## Run Order
